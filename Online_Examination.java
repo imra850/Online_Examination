@@ -4,24 +4,27 @@ import java.util.*;
 import java.util.HashMap;
 
 public class Online_Examination {
+	
 	HashMap<String,Integer> data = new HashMap <String,Integer>();
 	Scanner sc=new Scanner(System.in);
-	void login()
+	public void login()
 	{
 		data.put("Shivani", 20);
 		data.put("imran", 21);
-		data.put("spurabh", 22);
-		data.put("akash", 23);
+		data.put("sourabh", 22);
+		data.put("Irshad", 23);
 		data.put("simran", 24);
-		System.out.println("Welcome to Oasis Infobyte");
+		
+		System.out.println("**********Welcome to Oasis Infobyte**********");
 		System.out.println("Enter User ID");
 		String UserId=sc.nextLine();
 		System.out.println("Enter Password");
+		
 		int Password=sc.nextInt();
 		
 		if(data.containsKey(UserId) && data.get(UserId)==Password)
 		{
-			System.out.println("Successfully Login");
+			System.out.println("*****Successfully Login*****");
 			menu();
 		}
 		else
@@ -67,8 +70,8 @@ public class Online_Examination {
 		String uid=in.nextLine();
 		if(data.containsKey(uid)) {
 			System.out.println("Enter new password");
-			int newpwd=in.nextInt();
-			data.remove(uid,newpwd);
+			int newpwd=sc.nextInt();
+			data.replace(uid,newpwd);
 		}
 		else
 		{
@@ -92,58 +95,61 @@ public class Online_Examination {
 				+ "-1 mark for wrong answer ");
 		System.out.println("each question in section 2 takes 10 marks for correct answer and "
 				+ "-1 mark for wrong answer ");
-		System.out.println("Best Wishesh for your exam");
+		System.out.println("Best Wishesh for your exam \n");
+		
 		while(System.currentTimeMillis()<end1)
 		{
-			System.out.println("section 1 ");
-			System.out.println("who developed java");
-			System.out.println("a.James Gosling \n b.Dennins Rithce \n c. Guido Van Rossum \n d. Bjarnee Stroustrup");
+			System.out.println("section 1 \n");
+			
+			System.out.println(" 1)Which component is used to compile, debug and execut the java programs?");
+			System.out.println(" a)JRE \n b)JIT \n c)JDK \n D)JVM");
 			System.out.println("Enter your answer");
 			ans=sc.next().charAt(0);
-			if(ans=='a')
+			if(ans=='c')
 			{
 				cnt1+=1;
 			}
-			System.out.println("2. Name the java IDE's");
-			System.out.println("a. vsCode \n b.Eclipse & NetBeans \n c. notepad \n d. None ");
-			System.out.println("Enter your answer");
-			ans=sc.next().charAt(0);
-			if(ans=='b')
-			{
-				cnt1+=1;
-			}
-			System.out.println("3. What is the reason java stands unique from other language");
-			System.out.println("a. Platform Dependent \n b. Platform Independent \n c. Simple and Easy \n d.None");
+			System.out.println(" 2)Which one of the following is not a java feature?");
+			System.out.println(" a)Object-oriented \n b)Use of pointer \n c)Portable \n d)Dynamic and Extensible ");
 			System.out.println("Enter your answer");
 			ans=sc.next().charAt(0);
 			if(ans=='b')
 			{
 				cnt1+=1;
 			}
-			System.out.println("4. Correct Syntex for the compilation of a java program");
-			System.out.println("a. javac filename.java \b.java filename.java \n c.java filename \n d. java c filename");
+			System.out.println(" 3)Which of these cannot be used for a variable name in java?");
+			System.out.println(" a)identifier & keyword \n b)identifier \n c)Keyword \n d)none of the mentioned");
 			System.out.println("Enter your answer");
 			ans=sc.next().charAt(0);
-			if(ans=='a')
+			if(ans=='c')
 			{
 				cnt1+=1;
 			}
-			System.out.println("5. Automatic type conversion is possible in which of the possible  cases");
-			System.out.println("a.Byte To Int \b. Int To Long \n c.Long To Int \n d. None");
+			System.out.println(" 4)What is the extension of java code files");
+			System.out.println(" a).js \n b).txt \n c).class \n d).java");
 			System.out.println("Enter your answer");
-			ans=sc.toString().charAt(0);
-			if(ans=='b')
+			ans=sc.next().charAt(0);
+			if(ans=='d')
+			{
+				cnt1+=1;
+			}
+			System.out.println(" 5)Which environment variable is used to set the java path?");
+			System.out.println(" a)MAVEN_Path \n b)JavaPATH \n c)JAVA \n d)JAVA_HOME");
+			System.out.println("Enter your answer");
+			ans=sc.next().charAt(0);
+			if(ans=='d')
 			{
 				cnt1+=1;
 			}
 			break;
 		}
-		while(System.currentTimeMillis()<end1)
+		while(System.currentTimeMillis()<end2)
 		{
 			System.out.println("***Section 2***");
-			System.out.println("6. Guess the output");
-			System.out.println("public static void main(String args[] \n\t int x=5; \n\t int y=x++ + ++x; \n\t System.out.println('value of y');\n}");
-			System.out.println("a.10\n b.11 \n c.12 \n d.13");
+			System.out.println(" 6)Guess the output");
+			System.out.println("public static void main(String args[]){ \n\t int x=5; \n\t int y=x++ + ++x; "
+					+ "\n\t System.out.println('value of y');\n}");
+			System.out.println(" a)10 \n b)11 \n c)12 \n d)13");
 			System.out.println("Enter your answer");
 			ans=sc.next().charAt(0);
 			if(ans=='c')
@@ -155,13 +161,13 @@ public class Online_Examination {
 				score2-=2;
 			break;
 		}
-		System.out.println("You have completed the exam!!");
+		System.out.println("You have completed the exam!! \n");
 		score1=cnt1*5-((4-cnt1)*1);
-		System.out.println("Number of correct answers in section1 :"+cnt1);
-		System.out.println("Number of correct answer in section 2"+cnt2);
-		System.out.println("Your Score in section1"+score1);
-		System.out.println("Your score in section2"+score2);
-		System.out.println("Your total score is "+(score1+score2));
+		System.out.println("Number of correct answers in section1 : \n"+cnt1);
+		System.out.println("Number of correct answer in section 2 \n"+cnt2);
+		System.out.println("Your Score in section1 \n"+score1);
+		System.out.println("Your score in section2 \n"+score2);
+		System.out.println("Your total score is \n "+(score1+score2));
 		
 	}
 	public static void main(String[] args)
